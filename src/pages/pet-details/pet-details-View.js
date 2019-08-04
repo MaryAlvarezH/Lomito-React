@@ -52,7 +52,7 @@ function PetDetailsView(){
             <div className="comment-detail">
                 <i className="fas fa-user fa-5x"></i>
                 <div className="coment-text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequatur temporibus nesciunt laborum reprehenderit totam, beatae, rerum natus dolor quo, laudantium maxime quos minus fugit deleniti repellat itaque cumque? Laboriosam!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequatur temporibus nesciunt laborum reprehenderit totam, beatae, rerum natus dolor quo, laudantium maxime quos minus fugit deleniti repellat itaque cumque?</p>
                 </div>
             </div>
            
