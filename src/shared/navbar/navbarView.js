@@ -1,25 +1,26 @@
 import React from 'react'
-import './navbar.scss'
 import {NavLink} from 'react-router-dom'
-// import './MainHeader.scss'
+import './navbarView.scss'
 
-const NavbarView =(props) =>{
+
+ const NavbarView =(props) =>{
    
-    return(
-        <header>
-            <nav className="site-navbar">
-                <NavLink exact to="/" className="logo">Lomito</NavLink>
-                <div>
-                    {/* <a href="#">Adopta</a>
-                    <a href="#">Busca hogar</a>
-                    <a href="#">Sesión</a> */}
-                    <NavLink exact to="adopt">Adopta</NavLink>
-                    <NavLink exact to="search-home">Buscar Hogar</NavLink>
-                    <NavLink exact to="session">Sesión</NavLink>
-                </div>
-            </nav>
+    return (
+        <header className="site-navbar">
+          <nav>
+          <ul>
+              <div className="main-item">
+                  <li><NavLink exact to="/" className="logo" activeClassName="is-selected">Lomito</NavLink></li>
+              </div>
+              <div className="pages-items">
+                  <li><NavLink exact to="/adopt" className="item" activeClassName="is-selected">Adopta</NavLink></li>
+                  <li><NavLink exact to="/search-home" activeClassName="is-selected">Buscar Hogar</NavLink></li>
+                  <li><NavLink exact to="/session" activeClassName="is-selected">Sesión</NavLink></li>
+              </div>
+              </ul>
+          </nav>
         </header>
-    )
+      )
 
 }
 
