@@ -1,6 +1,6 @@
 import React from 'react';
 import './stylesdrop.scss';
-
+import {NavLink} from 'react-router-dom';
 
 class Dropdown extends React.Component {
 constructor(){
@@ -35,11 +35,10 @@ showDropdownMenu(event) {
          <div className="button-4" onClick={this.showDropdownMenu}> Sesión </div>
 
           { this.state.displayMenu ? (
-          <ul>
-         <li><a className="active" href="#session">Registro</a></li>
+          <ul className="drop">
          <li><a href="#iniciosesion">inicia sesion</a></li>
-         <li><a href="#contraseña">olvide mi contraseña!</a></li>
-         
+         <li><a href="#sesion">olvide mi contraseña!</a></li>
+        <li> <NavLink exact to="/session" activeClassName="is-selected">registro</NavLink></li>
           </ul>
         ):
         (

@@ -1,47 +1,70 @@
-import React from 'react'
+import React  from 'react'
 import './seccion.scss'
 
 
-const SessionView=(props)=>{
-    return(
-        
- <section className="container-humano">
-<div className="flat-form">
+class SessionView extends React.Component{
+constructor(props){
+   super(props);
+   this.state = {
+   Nombres:'',
+   Apellidos:''
+   };
+   this.procesar = this.procesar.bind(this);
+   this.Nombres = this.Nombres.bind(this);
+   this.Apellidos = this.Apellidos.bind(this);
+   this.date = this.date.bind(this);
+}
+
+   render(){
+      return(
+      <section className="container-humano">
+      <div className="flat-form">
         <h2>Registro Humano</h2>
         <p> Este es un Registro único para el humano
             que va a dar en adopcion o adoptar, ya que los datos
             son importantes para otros humanos
         </p>
-        <form>
+        <form onSubmit ={this.procesar}>
 <ul className="tabs">
    <li>
-<input type="text" placeholder="Nombres"></input>
+<label htmlFor="Nombres"></label>    
+<input type="text" value={this.state.Nombres} onChange={this.Nombres} placeholder="Nombres"></input>
    </li>
    <li>
-<input type="text" placeholder="Apellidos"></input>
+<label htmlFor="Apellidos"></label>    
+<input type="text" value={this.state.Apellidos} onChange={this.Apellidos} placeholder="Apellidos"></input>
    </li>
    <li>
-<input type="date" placeholder="date"></input>
+
+<label htmlFor="date"></label>          
+<input type="date" value={this.state.date} onChange={this.date}placeholder="date"></input>
    </li>
    <li>
+<label htmlFor="Email"></label>    
 <input type="text" placeholder="Correo Electronico"></input>
    </li>
    <li>
+<label htmlFor="contraseña"></label>    
 <input type="password" placeholder="Contraseña"></input>
    </li>
    <li>
+<label htmlFor="Confirmar contraseña"></label>    
 <input type="password" placeholder="Confirmar contraseña"></input>
    </li>
    <li>
+<label htmlFor="Telefono"></label>          
 <input type="text" placeholder="Telefono"></input>
    </li>
    <li>
+<label htmlFor="Direccion"></label>    
 <input type="text" placeholder="Dirección"></input>
    </li>
    <li>
+<label htmlFor="Codigo postal"></label>    
 <input type="text" placeholder="Codigo Postal"></input>
    </li>
    <li>
+<label htmlFor="estado"></label>    
 <select placeholder="estado">
 <option value="no"> Estado..</option>
 <option value="Aguascalientes">Aguascalientes</option>
@@ -80,6 +103,7 @@ const SessionView=(props)=>{
 </select>
    </li>
    <li>
+<label htmlFor="foto"></label>    
    
        foto de perfil
    
@@ -87,26 +111,43 @@ const SessionView=(props)=>{
 accept="image/png,.jpg,.jpeg,image/gif"></input>
 </li>
 <li>
-
+<input type='submit'/>
 
 </li>
 </ul>
 
 </form>
 </div>
+
 <div>
 
 <button className="button-2"> Inscribirse</button>
 </div>
 </section> //hasta aqui va bien
 
-
-
-
-
-    )
-
-
+    );
+   }
+procesar(e){
+   e.preventDefault();
+   alert('Nombre'+ this.state.Nombres +''+this.state.Apellidos +''+this.state.date)
 }
+Nombres(e){
+   this.setState({
+      Nombres: e.target.value
+   })
+}
+Apellidos(e){
+   this.setState({
+      Apellidos: e.target.value
+      })
+    }
+date(e){
+   this.setState({
+      date:e.target.value
+   })
+}
+    
+ }
+
 
 export default SessionView

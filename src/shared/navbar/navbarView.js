@@ -15,7 +15,7 @@ import Dropdown from '../../dropdownmenu/dropdown'
               <div className="pages-items">
                   <li><NavLink exact to="/adopt" className="item" activeClassName="is-selected">Adopta</NavLink></li>
                   <li><NavLink exact to="/search-home" activeClassName="is-selected">Buscar Hogar</NavLink></li>
-                  <li><NavLink exact to="/session" activeClassName="is-selected" >Sesion</NavLink></li>
+                  
                   <li><Dropdown></Dropdown></li>
                   
                   
