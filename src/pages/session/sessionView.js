@@ -7,12 +7,28 @@ constructor(props){
    super(props);
    this.state = {
    Nombres:'',
-   Apellidos:''
+   Apellidos:'',
+   date:'',
+   Email:'',
+   Contraseña:'',
+   ConfirmarContraseña:'',
+   Telefono:'',
+   Direccion:'',
+   CodigoPostal:'',
+   Estado:''
+
    };
    this.procesar = this.procesar.bind(this);
    this.Nombres = this.Nombres.bind(this);
    this.Apellidos = this.Apellidos.bind(this);
    this.date = this.date.bind(this);
+   this.Email = this.Email.bind(this);
+   this.Contraseña = this.Contraseña.bind(this);
+   this.ConfirmarContraseña = this.ConfirmarContraseña.bind(this);
+   this.Telefono = this.Telefono.bind(this);
+   this.Direccion = this.Direccion.bind(this);
+   this.CodigoPostal = this.CodigoPostal.bind(this);
+   this.Estado = this.Estado.bind(this);
 }
 
    render(){
@@ -41,31 +57,31 @@ constructor(props){
    </li>
    <li>
 <label htmlFor="Email"></label>    
-<input type="text" placeholder="Correo Electronico"></input>
+<input type="text" value={this.state.Email} onChange={this.Email} placeholder="Correo Electronico"></input>
    </li>
    <li>
-<label htmlFor="contraseña"></label>    
-<input type="password" placeholder="Contraseña"></input>
+<label htmlFor="contraseña" ></label>    
+<input type="password" value={this.state.Contraseña} onChange={this.Contraseña} placeholder="Contraseña"></input>
    </li>
    <li>
 <label htmlFor="Confirmar contraseña"></label>    
-<input type="password" placeholder="Confirmar contraseña"></input>
+<input type="password" value={this.state.ConfirmarContraseña} onChange={this.ConfirmarContraseña} placeholder="Confirmar contraseña"></input>
    </li>
    <li>
 <label htmlFor="Telefono"></label>          
-<input type="text" placeholder="Telefono"></input>
+<input type="text" value={this.state.Telefono} onChange={this.Telefono} placeholder="Telefono"></input>
    </li>
    <li>
 <label htmlFor="Direccion"></label>    
-<input type="text" placeholder="Dirección"></input>
+<input type="text" value={this.state.Direccion} onChange={this.Direccion} placeholder="Dirección"></input>
    </li>
    <li>
 <label htmlFor="Codigo postal"></label>    
-<input type="text" placeholder="Codigo Postal"></input>
+<input type="text" value={this.state.CodigoPostal} onChange={this.CodigoPostal} placeholder="Codigo Postal"></input>
    </li>
    <li>
 <label htmlFor="estado"></label>    
-<select placeholder="estado">
+<select value={this.state.Estado} onChange={this.Estado} placeholder="estado">
 <option value="no"> Estado..</option>
 <option value="Aguascalientes">Aguascalientes</option>
     <option value="Baja California">Baja California</option>
@@ -129,7 +145,18 @@ accept="image/png,.jpg,.jpeg,image/gif"></input>
    }
 procesar(e){
    e.preventDefault();
-   alert('Nombre'+ this.state.Nombres +''+this.state.Apellidos +''+this.state.date)
+   alert('Registro Completado'+ this.state.Nombres +''
+                 + this.state.Apellidos +''
+                 + this.state.date + '' 
+                 + this.state.Email + '' 
+                 + this.state.Contraseña +''
+                 + this.state.ConfirmarContraseña +''
+                 + this.state.Telefono +''
+                 + this.state.Direccion+ '' 
+                 + this.state.CodigoPostal+''
+                 + this.state.Estado
+                 
+                 )
 }
 Nombres(e){
    this.setState({
@@ -146,7 +173,45 @@ date(e){
       date:e.target.value
    })
 }
+Email(e){
+   this.setState({
+      Email: e.target.value
+   })
+}
+
+Contraseña(e){
+   this.setState({
+      Contraseña: e.target.value
+   })
+}
+ConfirmarContraseña(e){
+   this.setState({
+      ConfirmarContraseña:e.target.value
+   })
+}
     
+Telefono(e){
+   this.setState({
+      Telefono:e.target.value
+   })
+}
+
+Direccion(e){
+   this.setState({
+      Direccion:e.target.value
+   })
+}
+
+CodigoPostal(e){
+   this.setState({
+      CodigoPostal: e.target.value
+   })
+}
+Estado(e){
+   this.setState({
+      Estado:e.target.value
+   })
+}
  }
 
 
