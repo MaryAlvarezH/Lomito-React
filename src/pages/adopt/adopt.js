@@ -1,11 +1,32 @@
 import React, {Component,Fragment} from 'react'
 import AdoptView from './adoptView';
-let petList = [1,2,3,4,5,6,7,8,9]
+const URL = 'http://localhost:4001';
+
 class Adopt extends Component {
+    state = {
+        pets:[]
+    }
+
+    async componentDidMount() {
+        const raw = await this.handleData()
+        const pets = await raw.json()
+        this.setState({ pets });
+    }
+
+    handleData = (model = 'pets') => {
+        let url = `${URL}/${model}`
+        let headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    
+        return fetch(`${url}`,headers)
+    }
+
     render() {
         return (
-            <Fragment>
-                <AdoptView petList={petList}></AdoptView>
+            <Fragment> 
+                <AdoptView petList={this.state.pets}></AdoptView>
             </Fragment>
         )
     }

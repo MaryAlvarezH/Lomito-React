@@ -1,11 +1,25 @@
 import React from 'react'
 import './pet-details-view.scss'
 
-function PetDetailsView(){
+function PetDetailsView(props){
+    // const [state, setState] = React.useState({
+    //     userId,
+    //     petId,
+    //     like,
+    //     comment: {registeredAt, text}
+    // });
+
+    // const addNewActivity=async(state) =>{
+    //     const raw = await this.handleData(state, method = 'POST')
+       
+    // }
+        
+
+    
     return(
         <section className="info-pet-details">
             <div className="card-full-details">
-                <h2>Nombre del lomito</h2>
+                <h2>{props.petDetails.name}</h2>
                 <div className="general-full-details">
                     <div className="image-full-details">
                         <i className="fas fa-paw fa-10x"></i>
@@ -13,27 +27,43 @@ function PetDetailsView(){
                     <div className="description-full-details">
                         <div className="item-detail">
                             <span>Genero:</span>
-                            <p>Hembra</p>
+                            <p>{props.petDetails.gender}</p>
+                        </div>
+                        <div className="item-detail">
+                            <span>Especie:</span>
+                            <p>{props.petDetails.sort}</p>
                         </div>
                         <div className="item-detail">
                             <span>Tamaño:</span>
-                            <p>Mediano</p>
+                            <p>{props.petDetails.size}</p>
+                        </div>
+                        <div className="item-detail">
+                            <span>Raza:</span>
+                            <p>{props.petDetails.breed}</p>
                         </div>
                         <div className="item-detail">
                             <span>Edad:</span>
-                            <p>6 meses</p>
+                            <p>{props.petDetails.age}</p>
                         </div>
                         <div className="item-detail">
                             <span>Temperamento:</span>
-                            <p>Activo, sociable</p>
+                            <p>{props.petDetails.temperament}</p>
                         </div>
                         <div className="item-detail">
                             <span>Habilidades:</span>
-                            <p>Entrenada, obediente, inteligente</p>
+                            <p>
+                            {
+                               props.petDetails.skills.map(skill => {
+                                   return (
+                                        `${skill}, `
+                                   )
+                               }) 
+                            }
+                            </p>
                         </div>
                         <div className="item-detail">
                             <span>Observaciones:</span>
-                            <p>Puede ser muy territorial con algunos perros</p>
+                            <p>{props.petDetails.observations}</p>
                         </div>
                         <div className="card-pet-options">
                             <button type="submit" className="btn-like"><i className="fa fa-heart"></i></button>
@@ -49,12 +79,43 @@ function PetDetailsView(){
                 <input placeholder="¿Tienes dudas? Escíbele al dueño de este lomito"/>
                 <button type="submit">Enviar</button>
             </div>
-            <div className="comment-detail">
-                <i className="fas fa-user fa-5x"></i>
-                <div className="coment-text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequatur temporibus nesciunt laborum reprehenderit totam, beatae, rerum natus dolor quo, laudantium maxime quos minus fugit deleniti repellat itaque cumque?</p>
-                </div>
-            </div>
+            {
+                props.activities.map(act =>{
+                    if (act.petId === props.petDetails.id) {
+                        return (
+                            <div className="comment" key={act.id}>
+                                <div className="comment-detail">
+                                    <i className="fas fa-user fa-2x"></i>
+                                    <div className="coment-text">
+                                    <div className="date">
+                                        <span>{act.comment.registeredAt}</span>
+                                    </div>
+                                        <p>{act.comment.text}</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                {
+                                   act.userId===1 ? (
+                                        <div className="edit-comment">
+                                            <button type="text">Editar</button>
+                                            <button type="text">Borrar</button>
+                                            
+                                        </div>
+                                   ): null
+                               }
+                                </div>
+
+                                
+                       
+                               
+                               
+                              </div>  
+                            )
+                    }
+                })
+            }
+            
            
         </div>
     </section>

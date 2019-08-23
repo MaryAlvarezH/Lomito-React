@@ -1,13 +1,10 @@
 import React from 'react'
 import './adoptView.scss'
-import {Link} from 'react-router-dom'
+import PreviewCard from './previewCard/previewCard';
 function AdoptView(props) {
     return(
       
         <section className="dashboard"> 
-        {
-            console.log(props.petList)
-        }
             <div className="aside">
                 <h3>Filta tu búsqueda</h3>
             
@@ -65,35 +62,15 @@ function AdoptView(props) {
                 </div>
             
             </div>
+           
+
+            
             <div className="card-container">
             {
-                props.petList.map(item=>{
+                props.petList.map(pet=>{
                     return (
-                        <div className="card-pet">
-                            <h2>Nombre del lomito</h2>
-                            <i className="fas fa-paw fa-8x"></i>
-                            <div className="pet-details">
-                                <div className="item">Genero:</div>
-                                <div className="item-detail">Hembra</div>
-                                <div className="item">Tamaño:</div>
-                                <div className="item-detail">Mediano</div>
-                                <div className="item">Temperamento:</div>
-                                <div className="item-detail">Activo, sociable</div>
-                                <div className="item">Edad:</div>
-                                <div className="item-detail">6 meses</div>
-                            </div>
-                            <Link 
-                            to={{
-                                pathname:'/pet-detail',
-                                search: `?id=${item}`
-                            }}>
-                            {/* <a href="pet-details.html" target="_blank"><button className="card-pet-more" type="submit">Conocer</button></a> */}
-                            <button className="card-pet-more" type="submit">Conocer</button>
-                            </Link>
-                        </div>
+                        <PreviewCard {...pet} key={pet.id}/>
                     )
-
-                    
                 })
             }
             </div>
