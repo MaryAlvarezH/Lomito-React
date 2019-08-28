@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "Nombres": "Juanito",
+      "Apellidos": "perez",
+      "date": "29/05/1992",
+      "Contraseña": "chocolatito"
+    },
+    {
+      "Nombres": "david",
+      "Apellidos": "roman",
+      "date": "92292-03-29",
+      "Email": "kodhjdhq@hotmail.com",
+      "Contraseña": "chocolatito",
+      "ConfirmarContraseña": "chocolatito",
+      "Telefono": "65656577",
+      "Direccion": "postal 8",
+      "CodigoPostal": "1620",
+      "Estado": "Durango",
+      "id": 2
+    }
+  ]
+}

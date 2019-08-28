@@ -18,6 +18,7 @@ constructor(props){
    Estado:''
 
    };
+   this.guardarInfo = this.guardarInfo.bind(this);
    this.procesar = this.procesar.bind(this);
    this.Nombres = this.Nombres.bind(this);
    this.Apellidos = this.Apellidos.bind(this);
@@ -143,9 +144,21 @@ accept="image/png,.jpg,.jpeg,image/gif"></input>
 
     );
    }
+guardarInfo(){
+   fetch('http://localhost:4001/users',{
+      method:'POST',
+      headers:{
+         'Content-Type':'application/json'
+      },
+      body:JSON.stringify(this.state)
+   }) .then(console.log).catch(console.error)
+}
+
+
+
 procesar(e){
    e.preventDefault();
-   alert('Registro Completado'+ this.state.Nombres +''
+   /*alert('Registro Completado'+ this.state.Nombres +''
                  + this.state.Apellidos +''
                  + this.state.date + '' 
                  + this.state.Email + '' 
@@ -156,7 +169,8 @@ procesar(e){
                  + this.state.CodigoPostal+''
                  + this.state.Estado
                  
-                 )
+                 )*/
+      this.guardarInfo()           
 }
 Nombres(e){
    this.setState({
