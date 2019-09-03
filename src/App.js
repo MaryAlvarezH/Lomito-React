@@ -7,6 +7,7 @@ import SearchHome from './pages/searchHome/searchHome';
 import Session from './pages/session/session';
 import Footer from './shared/footer/footer';
 import PetDetails from './pages/pet-details/pet-details';
+import Session2 from './pages/session2/session2';
 
 
 
@@ -21,6 +22,10 @@ function App() {
         <Route exact path="/pet-detail" component={PetDetails}></Route>
         <Route exact path="/search-home" component={SearchHome}></Route>
         <Route exact path="/session" component={Session}></Route>
+        <Route exact path="/session2" component={Session2}></Route>
+
+        
+        
         <Footer></Footer>
       
       </Fragment>

@@ -47,6 +47,34 @@
       "id": 6
     }
   ],
+  "Pets-info": [
+    {
+      "LomitoName": "oslo",
+      "LomitoDate": "29/05/2018",
+      "LomitoDisease": "ninguna",
+      "LomitoSurgery": "ninguna",
+      "YearsWithyou": "1",
+      "AnimalEnergy": "mucha",
+      "HumanFriendly": "si",
+      "Specie": "perro",
+      "LomitoGender": "macho",
+      "LomitoSize": "mediano",
+      "id": "1"
+    },
+    {
+      "LomitoName": "jarocha",
+      "LomitoDate": "2015-05-05",
+      "LomitoDisease": "NUNCA",
+      "LomitoSurgery": "SI, CIRUGIA DE MATRIZ",
+      "YearsWithyou": "5 Años",
+      "AnimalEnergy": "poca, ya esta grande",
+      "HumanFriendly": "si",
+      "Specie": "Perro",
+      "LomitoGender": "Macho",
+      "LomitoSize": "",
+      "id": "wlLdfvu"
+    }
+  ],
   "pets": [
     {
       "id": 1,

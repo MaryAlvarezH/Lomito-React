@@ -38,7 +38,8 @@ showDropdownMenu(event) {
           <ul className="drop">
          <li><a href="#iniciosesion">inicia sesion</a></li>
          <li><a href="#sesion">olvide mi contraseña!</a></li>
-        <li> <NavLink exact to="/session" activeClassName="is-selected">registro</NavLink></li>
+        <li> <NavLink exact to="/session" activeClassName="is-selected">Registro Humano</NavLink></li>
+        <li> <NavLink exact to="/session2" activeClassName="is-selected">Registro Lomito</NavLink></li>
           </ul>
         ):
         (
