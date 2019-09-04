@@ -150,7 +150,7 @@ class SessionView2 extends React.Component{
             </li>
             <li>
                <label htmlFor="uploadInfo"/>
-               <input type="submit"/>
+               <input type="submit" value="Enviar Datos"/>
             </li>
 
          </ul>

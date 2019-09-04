@@ -119,16 +119,9 @@ constructor(props){
 
 </select>
    </li>
-   <li>
-<label htmlFor="foto"></label>    
-   
-       foto de perfil
-   
-<input type="file" name="imagen subida" 
-accept="image/png,.jpg,.jpeg,image/gif"></input>
-</li>
+
 <li>
-<input type='submit'/>
+<input type='submit' value="Enviar Datos"/>
 
 </li>
 </ul>
@@ -136,10 +129,6 @@ accept="image/png,.jpg,.jpeg,image/gif"></input>
 </form>
 </div>
 
-<div>
-
-<button className="button-2"> Inscribirse</button>
-</div>
 </section> //hasta aqui va bien
 
     );
